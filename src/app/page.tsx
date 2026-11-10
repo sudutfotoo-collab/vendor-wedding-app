@@ -1,5 +1,7 @@
 import { createClient } from '@/lib/supabase/server';
 
+export const instant = false;
+
 export default async function Home() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey =
@@ -91,8 +93,33 @@ export default async function Home() {
           </p>
         </div>
 
+        {isConnected && (
+          <div className="mt-6 flex flex-col gap-2">
+            <a
+              href="/app"
+              className="w-full py-2.5 px-4 bg-zinc-900 hover:bg-zinc-800 text-white text-sm font-semibold rounded-lg text-center transition-colors"
+            >
+              Buka Aplikasi (/app)
+            </a>
+            <div className="flex gap-2">
+              <a
+                href="/masuk"
+                className="flex-1 py-2 px-3 border border-zinc-300 hover:bg-zinc-100 text-zinc-800 text-xs font-semibold rounded-lg text-center transition-colors"
+              >
+                Masuk
+              </a>
+              <a
+                href="/daftar"
+                className="flex-1 py-2 px-3 border border-zinc-300 hover:bg-zinc-100 text-zinc-800 text-xs font-semibold rounded-lg text-center transition-colors"
+              >
+                Daftar Usaha
+              </a>
+            </div>
+          </div>
+        )}
+
         <div className="mt-6 pt-4 border-t border-zinc-100 text-center text-xs text-zinc-500">
-          Tahap 1: Setup Proyek &amp; Koneksi Supabase
+          Tahap 1 &amp; 2 Selesai • Tahap 3: Login &amp; Peran
         </div>
       </div>
     </main>

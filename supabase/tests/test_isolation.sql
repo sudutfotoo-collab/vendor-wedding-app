@@ -443,3 +443,4 @@ BEGIN
 
     RAISE EXCEPTION '%', v_summary || v_details || E'===================================================================\n(Pesan error ini sengaja dipicu untuk memastikan seluruh transaksi otomatis di-ROLLBACK dan database tetap bersih.)';
 END $$;
+ 
